@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "wyn-pm"
-version = "0.2.7"
+version = "0.2.8"
 description = "The library helps analysts to investigate portfolio and stock market."
 authors = ["Yiqiao Yin <yiqiao.yin@wyn-associates.com>"]
 readme = "README.md"

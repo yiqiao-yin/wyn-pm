@@ -133,25 +133,32 @@ The four-factor model is commonly used for active management and mutual fund eva
 #### 1. Market Model:
 
 $$
-EXR_t = α^J + β_mkt * EXMKT_t + ε_t
+EXR_t = \alpha^J + \beta_{mkt} * EXMKT_t + \epsilon_t
 $$
 The intercept in this model is referred to as "Jensen's alpha".
+
+- The Valuation of Risk Assets and the Selection of Risky Investments in Stock Portfolios and Capital Budgets, [link](https://www.sciencedirect.com/science/article/abs/pii/B9780127808505500186)
+- Capital Asset Prices: A Theory of Market Equilibrium under Conditions of Risk, [link](https://onlinelibrary.wiley.com/doi/10.1111/j.1540-6261.1964.tb02865.x)
 
 ### 2. Fama–French Three-Factor Model:
 
 $$
-EXR_t = α^{FF} + β_{mkt} * EXMKT_t + β_{HML} * HML_t + β_{SMB} * SMB_t + ε_t
+EXR_t = \alpha^{FF} + \beta_{mkt} * EXMKT_t + \beta_{HML} * HML_t + \beta_{SMB} * SMB_t + \epsilon_t
 $$
 The intercept in this model is referred to as the "three-factor alpha".
+
+- Common risk factors in the returns on stocks and bonds, [link](https://www.sciencedirect.com/science/article/abs/pii/0304405X93900235?via%3Dihub)
+- The Capital Asset Pricing Model: Theory and Evidence, [link](https://mba.tuck.dartmouth.edu/bespeneckbo/default/AFA611-Eckbo%20web%20site/AFA611-S6B-FamaFrench-CAPM-JEP04.pdf)
+- The other side of value: The gross profitability premium, [link](https://www.sciencedirect.com/science/article/abs/pii/S0304405X13000044)
+- A five-factor asset pricing model, [link](https://www.sciencedirect.com/science/article/abs/pii/S0304405X14002323?via%3Dihub)
 
 ### 3. Carhart Four-Factor Model:
 
 $$
-EXR_t = α^c + β_{mkt} * EXMKT_t + β_{HML} * HML_t + β_{SMB} * SMB_t + β_{UMD} * UMD_t + ε_t
+EXR_t = \alpha^c + \beta_{mkt} * EXMKT_t + \beta_{HML} * HML_t + \beta_{SMB} * SMB_t + \beta_{UMD} * UMD_t + \epsilon_t
 $$
 
-The intercept in this model is referred to as the "four-factor alpha".
-`EXR_t` is the monthly return to the asset of concern in excess of the monthly t-bill rate. These models are used to adjust for risk by regressing the excess returns of the asset on an intercept (the alpha) and some factors on the right-hand side of the equation that attempt to control for market-wide risk factors. The right-hand side risk factors include the monthly return of the CRSP value-weighted index less the risk-free rate (`EXMKT_t`), monthly premium of the book-to-market factor (`HML_t`), monthly premium of the size factor (`SMB_t`), and the monthly premium on winners minus losers (`UMD_t`) from Fama-French (1993) and Carhart (1997).
+The intercept in this model is referred to as the "four-factor alpha". `EXR_t` is the monthly return to the asset of concern in excess of the monthly t-bill rate. These models are used to adjust for risk by regressing the excess returns of the asset on an intercept (the alpha) and some factors on the right-hand side of the equation that attempt to control for market-wide risk factors. The right-hand side risk factors include the monthly return of the CRSP value-weighted index less the risk-free rate (`EXMKT_t`), monthly premium of the book-to-market factor (`HML_t`), monthly premium of the size factor (`SMB_t`), and the monthly premium on winners minus losers (`UMD_t`) from Fama-French (1993) and Carhart (1997).
 
 A fund manager demonstrates forecasting ability when their fund has a positive and statistically significant alpha.
 
