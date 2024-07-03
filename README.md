@@ -2,7 +2,12 @@
 
 Welcome to the `wyn-pm` library, an official library from [W.Y.N. Associates, LLC](https://wyn-associates.com/) FinTech branch. This library provides tools for stock analysis, efficient portfolio generation, and training sequential neural networks for financial data.
 
-[![YouTube Video](https://img.youtube.com/vi/85Rv7jg8gc8/0.jpg)](https://www.youtube.com/embed/85Rv7jg8gc8?si=L4zlKGmdJOu6bO82)
+Check out the videos below for detailed demonstrations:
+
+| Video 1: An Introduction | Video 2: Momentum Strategy |
+| --- | --- |
+| [![YouTube Video](https://img.youtube.com/vi/JYK6Tc6oCwM/0.jpg)](https://www.youtube.com/embed/JYK6Tc6oCwM?si=qrmHAXZRfS8BrZRS) | [![YouTube Video](https://img.youtube.com/vi/o5InruG2n-w/0.jpg)](https://www.youtube.com/embed/o5InruG2n-w?si=YbhbyaG7SqjKJ5Rz) |
+
 
 ## Links
 
