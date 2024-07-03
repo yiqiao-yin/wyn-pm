@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "wyn-pm"
+version = "0.2.2"
+description = "The library helps analysts to investigate portfolio and stock market."
+authors = ["Yiqiao Yin <yiqiao.yin@wyn-associates.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+numpy = ">=1.21.6"
+pandas = "^2.2.2"
+scipy = "1.11.4"
+plotly = "^5.22.0"
+yfinance = "^0.2.40"
+scikit-learn = "^1.5.0"
+tensorflow = "^2.15.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
