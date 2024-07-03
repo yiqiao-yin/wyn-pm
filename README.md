@@ -88,10 +88,12 @@ Create a portfolio based on the famous **momentum strateg** in asset pricing giv
 ### Example Usage:
 
 ```python
-# Plot "Momentum Strategy":
-portfolio = EfficientPortfolio(tickers=["AAPL", "MSFT", "GOOGL"], start_date="2020-01-01", end_date="2022-01-01", interval="1d")
+# Acquire data for the "Momentum Strategy":
+portfolio = EfficientPortfolio(tickers=["AAPL", "MSFT", "GOOGL", "NFLX", "IBM"], start_date="2017-01-01", end_date="2024-07-01", interval="1mo")
 stock_data = portfolio.download_stock_data()
-portfolio_returns = portfolio.create_portfolio_and_calculate_returns(top_n=2)
+portfolio_returns = portfolio.create_portfolio_and_calculate_returns(top_n=3)
+
+# Plot
 fig = portfolio.plot_portfolio_performance(portfolio_returns, height_of_graph=600)
 fig.show()
 ```
@@ -138,14 +140,14 @@ The intercept in this model is referred to as "Jensen's alpha".
 ### 2. Fama–French Three-Factor Model:
 
 $$
-EXR_t = α^FF + β_mkt * EXMKT_t + β_HML * HML_t + β_SMB * SMB_t + ε_t
+EXR_t = α^{FF} + β_{mkt} * EXMKT_t + β_{HML} * HML_t + β_{SMB} * SMB_t + ε_t
 $$
 The intercept in this model is referred to as the "three-factor alpha".
 
 ### 3. Carhart Four-Factor Model:
 
 $$
-EXR_t = α^c + β_mkt * EXMKT_t + β_HML * HML_t + β_SMB * SMB_t + β_UMD * UMD_t + ε_t
+EXR_t = α^c + β_{mkt} * EXMKT_t + β_{HML} * HML_t + β_{SMB} * SMB_t + β_{UMD} * UMD_t + ε_t
 $$
 
 The intercept in this model is referred to as the "four-factor alpha".

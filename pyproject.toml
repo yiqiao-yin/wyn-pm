@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "wyn-pm"
-version = "0.2.2"
+version = "0.2.7"
 description = "The library helps analysts to investigate portfolio and stock market."
 authors = ["Yiqiao Yin <yiqiao.yin@wyn-associates.com>"]
 readme = "README.md"
@@ -14,6 +14,7 @@ plotly = "^5.22.0"
 yfinance = "^0.2.40"
 scikit-learn = "^1.5.0"
 tensorflow = "^2.15.0"
+prettytable = "^3.10.0"
 
 [build-system]
 requires = ["poetry-core"]

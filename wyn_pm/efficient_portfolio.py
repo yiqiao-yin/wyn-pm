@@ -3,6 +3,7 @@ from typing import List, Tuple
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
+from prettytable import PrettyTable
 import plotly.graph_objects as go
 import yfinance as yf
 
@@ -38,8 +39,8 @@ class EfficientPortfolio:
             start=self.start_date,
             end=self.end_date,
             interval=self.interval,
-        )
-        return self.data["Adj Close"]
+        )["Adj Close"]
+        return self.data
 
     def download_stocks(self) -> List[pd.DataFrame]:
         """
@@ -70,6 +71,7 @@ class EfficientPortfolio:
         portfolio_history = []
         portfolio_returns = []
 
+        # Loop over the data in window_size-day windows
         window_size = 1
         for start in range(0, len(returns_data) - window_size, window_size):
             end = start + window_size
@@ -84,9 +86,7 @@ class EfficientPortfolio:
 
             portfolio_returns.extend(next_window)
             added_length = len(next_window)
-            portfolio_history.extend(
-                [[top_stocks[i][1] for i in range(len(top_stocks))]] * added_length
-            )
+            portfolio_history.extend([top_stocks] * added_length)
 
         new_returns_data = returns_data.copy()
         new_returns_data = new_returns_data.iloc[0:-window_size, :]
@@ -225,7 +225,7 @@ class EfficientPortfolio:
         ax.set_ylabel("Annual returns")
         ax.legend(labelspacing=0.8)
 
-        return fig, {
+        details = {
             "Annualised Return": round(rp, 2),
             "Annualised Volatility": round(sdp, 2),
             "Max Sharpe Allocation": max_sharpe_allocation,
@@ -237,6 +237,22 @@ class EfficientPortfolio:
                 min_vol_allocation.sum(axis=1), axis=0
             ),
         }
+
+        keys = []
+        values = []
+
+        for key, value in details.items():
+            keys.append(key)
+            values.append(value)
+
+        table = PrettyTable()
+        table.field_names = ["Key", "Value"]
+        for i in range(len(keys)):
+            table.add_row([keys[i], values[i]])
+
+        print(table)
+
+        return fig, details
 
     def plot_portfolio_performance(
         self, portfolio_returns: pd.DataFrame, height_of_graph: int
@@ -332,8 +348,8 @@ class EfficientPortfolio:
             f"Portfolio => Mean: {portfolio_mean:.4f}, Std: {portfolio_std:.4f}<br>"
             f"---<br>"
             f"This may or may not be a small number, let's check under the following cases 1) 12-mon, and 2) 50-year returns on $1,000 USD: <br>"
-            f"$1,000*(1+{portfolio_mean:.4f})^({some_n_based_on_time_frame})={in_a_year}, <br>"
-            f"$1,000*(1+{portfolio_mean:.4f})^({some_n_based_on_time_frame}*50)={in_50_years}."
+            f"1,000*(1+{portfolio_mean:.4f})^({some_n_based_on_time_frame})={in_a_year} in USD, <br>"
+            f"1,000*(1+{portfolio_mean:.4f})^({some_n_based_on_time_frame}*50)={in_50_years} in USD."
         )
         curr_max_num = max(
             df.rolling_benchmark.max(), df.rolling_portfolio_returns.max()
