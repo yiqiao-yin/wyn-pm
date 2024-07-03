@@ -9,6 +9,7 @@ Welcome to the `wyn-pm` library, an official library from [W.Y.N. Associates, LL
 - [W.Y.N. Associates Fintech Library](https://wyn-associates.com/fintech/)
 - [WYN PM on PyPI](https://pypi.org/project/wyn-pm/)
 - [Web App](https://huggingface.co/spaces/eagle0504/Momentum-Strategy-Screener)
+- [Github](https://github.com/yiqiao-yin/wyn-pm)
 
 ## Installation 🚀
 
